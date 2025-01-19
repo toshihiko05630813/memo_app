@@ -15,12 +15,12 @@
         @method('PATCH')
         <p>
             <label for='title'>タイトル</label><br>
-            <input type='text' name="title" id="title" value="{{ $memo->title }}">        
+            <input type="text" name="title" id="title" value="{{ old('title', $memo->title) }}">        
         </p>
 
         <p>
             <label for='body'>本文</label><br>
-            <textarea name='body' class="body" id="body">{{ $memo->body }}</textarea>        
+            <textarea name="body" class="body" id="body">{{ old('body', $memo->body) }}</textarea>        
         </p>
 
 
