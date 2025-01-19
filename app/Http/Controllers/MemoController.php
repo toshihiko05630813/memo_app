@@ -39,7 +39,6 @@ class MemoController extends Controller
     {
         $memo = Memo::find($id);
         return view('memos.show', ['memo' => $memo]);
-
     }
     public function edit($id)
     {
@@ -60,4 +59,12 @@ class MemoController extends Controller
         return redirect(route('memos.index'));
     }
 
+    public function destroy($id)
+    {
+        $memo = Memo::find($id);
+        $memo->delete();
+
+        //削除したらindexに戻る
+        return redirect(route('memos.index'));
+    }
 }
